@@ -4,8 +4,9 @@ export NDK_PROJECT_PATH=/home/elias/Library/Projects/dnsmasq-Android/android-ndk
 export ANDROID_NDK=/home/elias/Library/Engineering/manuals/Android/dnsmasq/android-ndk-r26b/
 export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 
-make clean
-make ARCH=arm64-v8a
+# the original make hangs, instead use NDK version:
+../android-ndk-r26b/prebuilt/linux-x86_64/bin/make clean
+../android-ndk-r26b/prebuilt/linux-x86_64/bin/make ARCH=arm64-v8a
 
 #### Google repo:
 https://android.googlesource.com/platform/external/dnsmasq/
