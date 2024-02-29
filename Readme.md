@@ -1,17 +1,20 @@
-# Build NDK:
+# Build using NDK:
+### 1. Download and extract NDK
+
+### 2. Run:
 export NDK_PROJECT_PATH=/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/
 
 export ANDROID_NDK=/home/elias/Library/Engineering/manuals/Android/dnsmasq/android-ndk-r26b/
 export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 
-# the original make hangs, instead use NDK version:
+### 3. The original make hangs, use NDK version instead:
 ../android-ndk-r26b/prebuilt/linux-x86_64/bin/make clean
 ../android-ndk-r26b/prebuilt/linux-x86_64/bin/make ARCH=arm64-v8a
 
-#### Google repo:
+#### Google repo: (does not build)
 https://android.googlesource.com/platform/external/dnsmasq/
 
-#### Official repo:
+#### Official repo: (builds)
 https://thekelleys.org.uk/dnsmasq/
 
 # Sources:
@@ -38,32 +41,4 @@ https://docs.unrealengine.com/5.0/en-US/how-to-set-up-android-sdk-and-ndk-for-yo
 https://docs.unity3d.com/560/Documentation/Manual/android-sdksetup.html
 
 # To block:
-.bar
-.beauty
-.biz
-.cc
-.cf
-.cl
-.design
-.fun
-.ga
-.gq
-.info
-.ink
-.life
-.love
-.ml
-.pro
-.pw
-.quest
-.ru
-.se
-.sex
-.site
-.tech
-.tk
-.top
-.tw
-.wiki
-.xyz
-
+block all except defined ones. See pc's file.
