@@ -26,6 +26,9 @@ https://xdaforums.com/t/is-it-possible-to-run-dnsmasq-on-lineageos.4652441/
 https://xdaforums.com/t/tut-adblock-using-dnsmasq-root.3279186/
 https://xdaforums.com/t/how-do-i-assign-a-permanent-static-ip-address-to-hotspot-in-android-10.4037021/
 
+https://stackoverflow.com/questions/14370825/where-is-dnsmasq-conf-in-android-phone
+You should just create a file called dnsmasq.pid, somewhere on your system, and give it to dnsmasq using dnsmasq --pid-file <path/to/your/dnsmasq.pid>. Be sure that dnsmasq has the rights to access this file.
+
 # Build C++ on Android:
 https://shareprogrammingtips.blogspot.com/2018/07/cross-compile-cc-based-programs-and-run.html
 
@@ -46,6 +49,7 @@ adb shell 'chmod +x /data/local/tmp/dnsmasq'
 adb push dnsmasq.conf /data/local/tmp/dnsmasq.conf
 adb shell '/data/local/tmp/dnsmasq --conf-file=/data/local/tmp/adblock.conf <&- &'
 ```
-
-https://stackoverflow.com/questions/14370825/where-is-dnsmasq-conf-in-android-phone
-You should just create a file called dnsmasq.pid, somewhere on your system, and give it to dnsmasq using dnsmasq --pid-file <path/to/your/dnsmasq.pid>. Be sure that dnsmasq has the rights to access this file.
+# error:
+/system/bin/sh: /data/local/tmp/dnsmasq: not executable: 64-bit ELF file
+# Solution: (not tested yet)
+https://stackoverflow.com/questions/41644382/android-not-executable-64-bit-elf-file
