@@ -1,1 +1,3 @@
 ../android-ndk-r26b/ndk-build --trace
+
+g++ test.cpp
