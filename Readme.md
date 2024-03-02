@@ -43,8 +43,11 @@ adb shell 'nohup /data/local/tmp/dnsmasq >/dev/null 2>&1 &'
 ```
 # Modified:
 ```
+adb shell 'rm -f /data/local/tmp/dnsmasq'
 adb shell '/data/local/tmp/dnsmasq --version'
 adb push dnsmasq /data/local/tmp/dnsmasq
+adb shell 'ls -a1l /data/local/tmp/dnsmasq'
+adb shell '/data/local/tmp/dnsmasq --version'
 adb shell 'chmod +x /data/local/tmp/dnsmasq'
 adb push dnsmasq.conf /data/local/tmp/dnsmasq.conf
 adb shell '/data/local/tmp/dnsmasq --conf-file=/data/local/tmp/adblock.conf <&- &'
