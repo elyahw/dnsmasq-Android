@@ -4,15 +4,25 @@ https://developer.android.com/ndk/guides
 
 # 2. Run:
 ```
-export NDK_PROJECT_PATH=/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/
-export ANDROID_NDK=/home/elias/Library/Engineering/manuals/Android/dnsmasq/android-ndk-r26b/
-export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+export NDK=/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/
+export ANDROID_NDK=$NDK
+export NDK_PROJECT_PATH=$NDK
+export PATH=$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+
+# Additional, from NDK website:
+export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
+export TARGET=armv7a-linux-androideabi
+export API=22
 ```
 
 # 3. The original make hangs, use NDK version instead:
 ```
-../android-ndk-r26b/prebuilt/linux-x86_64/bin/make clean
-../android-ndk-r26b/prebuilt/linux-x86_64/bin/make ARCH=arm64-v8a
+$NDK/prebuilt/linux-x86_64/bin/make clean
+$NDK/prebuilt/linux-x86_64/bin/make ARCH=arm64-v8a
+
+$NDK/prebuilt/linux-x86_64/bin/make TARGET=arm64-v8a
+
+$NDK/prebuilt/linux-x86_64/bin/make CC=$TOOLCHAIN/bin/$TARGET$API-clang AR=$TOOLCHAIN/bin/llvm-ar RANLIB=$TOOLCHAIN/bin/llvm-ranlib
 ```
 
 # Google repo: (does not build)
