@@ -1,0 +1,12 @@
+export NDK=/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26c/
+
+export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
+export TARGET=armv7a-linux-androideabi
+
+export API=21
+
+make \
+    CC=$TOOLCHAIN/bin/$TARGET$API-clang \
+    AR=$TOOLCHAIN/bin/llvm-ar \
+    RANLIB=$TOOLCHAIN/bin/llvm-ranlib \
+    hello.cpp
