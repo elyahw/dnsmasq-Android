@@ -16,7 +16,7 @@ armv7a-linux-androideabi34-clang++ test.cpp
 
 armv7a-linux-androideabi34-clang test.cpp
 
-# sudo pacman -S aarch64-linux-gnu-binutils # how to use it?
+# sudo pacman -S aarch64-linux-gnu-binutils # how to use it? I ran `umachine` soon after it and it updated clang-17!
 
 /home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/build/tools/make_standalone_toolchain.py --arch arm64 --api 33
 
