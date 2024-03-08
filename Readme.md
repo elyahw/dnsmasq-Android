@@ -7,12 +7,20 @@ https://developer.android.com/ndk/guides
 export NDK=/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/
 export ANDROID_NDK=$NDK
 export NDK_PROJECT_PATH=$NDK
-export PATH=$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
-
-# Additional, from NDK website:
 export TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/linux-x86_64
+export PATH=$TOOLCHAIN/bin:$PATH
 export TARGET=armv7a-linux-androideabi
-export API=22
+export API=34
+
+armv7a-linux-androideabi34-clang++ test.cpp
+
+armv7a-linux-androideabi34-clang test.cpp
+
+# sudo pacman -S aarch64-linux-gnu-binutils # how to use it?
+
+/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/build/tools/make_standalone_toolchain.py --arch arm64 --api 33
+
+/home/elias/Library/Projects/dnsmasq-Android/android-ndk-r26b/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi34-clang test.cpp
 ```
 
 # 3. The original make hangs, use NDK version instead:
