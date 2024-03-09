@@ -12,6 +12,11 @@ export PATH=$TOOLCHAIN/bin:$PATH
 export TARGET=armv7a-linux-androideabi
 export API=34
 
+# new:
+https://nickdesaulniers.github.io/blog/2016/07/01/android-cli/
+./android-ndk-r12b/build/tools/make_standalone_toolchain.py --arch arm64 --install-dir ~/arm # see the outputs
+cd ~/arm && ./bin/clang-17 test.cpp  -v
+
 armv7a-linux-androideabi34-clang++ test.cpp
 
 armv7a-linux-androideabi34-clang test.cpp
