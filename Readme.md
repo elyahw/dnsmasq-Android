@@ -12,6 +12,10 @@ export PATH=$TOOLCHAIN/bin:$PATH
 export TARGET=armv7a-linux-androideabi
 export API=34
 
+# Other:
+export APP_PLATFORM=android-33
+export APP_BUILD_SCRIPT=
+
 # new:
 https://nickdesaulniers.github.io/blog/2016/07/01/android-cli/
 ./android-ndk-r12b/build/tools/make_standalone_toolchain.py --arch arm64 --install-dir ~/arm # see the outputs
